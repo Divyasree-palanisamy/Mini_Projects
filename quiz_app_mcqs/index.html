@@ -5,21 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     <h1>Quiz App</h1>
+
     <div class="quiz-container">
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
         <h2 id="question">Question text here</h2>
         <div id="options"></div>
         <button id="nextBtn">Next</button>
         <div id="score"></div>
         <button id="resetBtn">Reset Quiz</button>
-        <script src="script.js"></script>
 
     </div>
+    <audio id="correctSound" src=""></audio>
+    <audio id="wrongSound" src=""></audio>
+    <audio id="completedSound" src=""></audio>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
