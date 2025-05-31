@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #a9e8de, #66a4bc, #d5edf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #0f7389, #66a5bc, #3a728a);
+            color: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: rgb(223, 255, 196);
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            color: black;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        input[type="number"]:hover {
+            border-radius: 10px;
+            background-color: #c2efe6;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #1abc9c;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        div p {
+            font-size: 16px;
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Budget Calculator</h1>
+        <label>Enter Income</label>
+        <input type="number" id="income" placeholder="Eg: 9000">
+
+        <label>Enter Expenses:</label>
+        <input type="number" id="rent" placeholder="Rent">
+        <input type="number" id="food" placeholder="Food">
+        <input type="number" id="transport" placeholder="Transport">
+
+        <button onclick="calc()">Calculate</button>
+
+        <div>
+            <p id="total-expenses">Total Expenses: </p>
+            <p id="remaining">Remaining Balance: </p>
+        </div>
+    </div>
+
+    <script>
+        function calc() {
+            let inc = parseFloat(document.getElementById("income").value);
+            let rnt = parseFloat(document.getElementById("rent").value);
+            let fd = parseFloat(document.getElementById("food").value);
+            let trpt = parseFloat(document.getElementById("transport").value);
+
+            let totalExpenses = rnt + fd + trpt;
+            let balance = inc - totalExpenses;
+
+            document.getElementById("total-expenses").innerText = "Total Expenses: ₹" + totalExpenses;
+            document.getElementById("remaining").innerText = "Remaining Balance: ₹" + balance;
+        }
+    </script>
+</body>
+
+</html>
